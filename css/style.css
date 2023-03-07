@@ -80,7 +80,7 @@ body {
 	top:1px;
 }
 
-#timer p {
+#timer {
     color: white;
     font-family: sans-serif;
     font-size: 3em;
@@ -123,4 +123,10 @@ input[type="number"] {
 #compare:active {
 	position:relative;
 	top:1px;
+}
+
+#results p {
+    color: white;
+    font-family: sans-serif;
+    font-size: 2em;
 }
