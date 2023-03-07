@@ -16,6 +16,7 @@ let randomContainerEl = document.getElementById('random-numbers-container');
 let numbersCompareEl = document.getElementById('numbers-compare');
 let timerEl = document.getElementById('timer');
 let paragraph = document.createElement('p');
+let resultsEl = document.getElementById('results');
 
 // Evento che attiva il countdown
 document.getElementById('start').addEventListener('click', startCountdown);
@@ -37,11 +38,93 @@ document.getElementById('reset').addEventListener('click', function () {
 
 });
 
+// Evento per comparare i numeri inseriti negli input con quelli dell'arrayNumbers
+document.getElementById('compare').addEventListener('click', function () {
 
+    let number1El = document.getElementById('number-1');
+    let number2El = document.getElementById('number-2');
+    let number3El = document.getElementById('number-3');
+    let number4El = document.getElementById('number-4');
+    let number5El = document.getElementById('number-5');
 
+    let correctNumbers = [];
 
+    if (number1El.value == arrayNumbers[0]) {
 
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Corretto, il numero ${arrayNumbers[0]} è stato individuato.`;
+        resultsEl.append(resultEl);
+        correctNumbers.push(arrayNumbers[0]);
 
+    } else {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Sbagliato, il numero corretto era ${arrayNumbers[0]}.`;
+        resultsEl.append(resultEl);
+
+    }
+    
+    if (number2El.value == arrayNumbers[1]) {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Corretto, il numero ${arrayNumbers[1]} è stato individuato.`;
+        resultsEl.append(resultEl);
+        correctNumbers.push(arrayNumbers[1]);
+
+    } else {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Sbagliato, il numero corretto era ${arrayNumbers[1]}.`;
+        resultsEl.append(resultEl);
+
+    }
+    
+    if (number3El.value == arrayNumbers[2]) {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Corretto, il numero ${arrayNumbers[2]} è stato individuato.`;
+        resultsEl.append(resultEl);
+        correctNumbers.push(arrayNumbers[2]);
+
+    } else {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Sbagliato, il numero corretto era ${arrayNumbers[2]}.`;
+        resultsEl.append(resultEl);
+
+    }
+    
+    if (number4El.value == arrayNumbers[3]) {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Corretto, il numero ${arrayNumbers[3]} è stato individuato.`;
+        resultsEl.append(resultEl);
+        correctNumbers.push(arrayNumbers[3]);
+
+    } else {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Sbagliato, il numero corretto era ${arrayNumbers[3]}.`;
+        resultsEl.append(resultEl);
+
+    }
+
+    if (number5El.value == arrayNumbers[4]) {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Corretto, il numero ${arrayNumbers[4]} è stato individuato.`;
+        resultsEl.append(resultEl);
+        correctNumbers.push(arrayNumbers[4]);
+
+    } else {
+
+        let resultEl = document.createElement('p');
+        resultEl.textContent = `Sbagliato, il numero corretto era ${arrayNumbers[4]}.`;
+        resultsEl.append(resultEl);
+
+    }
+
+});
 
 //------------------------------------------------------------------------
 // FUNZIONI
@@ -73,20 +156,20 @@ function getRandomNumber(min, max) {
 // Funzione del countdown
 function startCountdown() {
 
-    timingInterval = setInterval(function() {
+    timingInterval = setInterval(function () {
 
-      timerEl.innerHTML = timer;
+        timerEl.innerHTML = timer;
 
-      if (timer <= 0) {
+        if (timer <= 0) {
 
-        paragraph.style.display = 'none';
-        timerEl.style.display = 'none';
-        numbersCompareEl.style.display = 'block';
-        clearInterval(timingInterval);
+            paragraph.style.display = 'none';
+            timerEl.style.display = 'none';
+            numbersCompareEl.style.display = 'block';
+            clearInterval(timingInterval);
 
-      }
+        }
 
-      timer--;
+        timer--;
 
     }, 1000);
 
